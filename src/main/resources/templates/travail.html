@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+      xml:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tous travaux de batiments</title>
+    <link rel="shortcut icon" href="img/sf.jpeg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="">
+<h1>
+    <div>
+        <div class="">
+                <div class="card-body text-center">
+                    <img class="img-thumbnail" style="width:30rem" src="https://www.reno-info-maison.com/rim_images/articles/evacuations-nicoll.jpg">
+                </div>
+        </div>
+        </div>
+        <p class="flex-sm-fill text-sm-center fst-italic">Remplir le Formulaire Suivante !!!</p>
+</h1>
+<form class="container" method="POST" th:object="${traveaux}">
+    <th:block th:include="messageValidation"></th:block>
+    <div class="row col 12 form-group card-body">
+            <label><b>Prenom</b></label>
+            <input class="form-control" placeholder="Prenom" th:errorclass="is-invalid"  type="text" value="" name="prenom" th:fieled="*{prenom}"/>
+            <small>ton prenom est obligatoire</small>
+            <label><b>Nom</b></label>
+            <input class="form-control" placeholder="Nom" th:errorclass="is-invalid" type="text" value="" name="Nom" th:fieled="*{Nom}"/>
+            <small>ton nom est obligatoire</small>
+            <label><b>ville</b></label>
+            <input class="form-control" placeholder="ville" th:errorclass="is-invalid" type="text" value="" name="ville" th:fieled="*{ville}"/>
+            <small>dans quel ville</small>
+            <label><b>Quartier</b></label>
+            <input class="form-control" placeholder="quartier" th:errorclass="is-invalid" type="text" value="" name="quartier" th:fieled="*{quartier}" />
+             <small>informe le quartier</small>
+            <label><b>Adresse</b></label>
+            <input class="form-control" placeholder="adresse" th:errorclass="is-invalid" type="text" value="" name="adresse" th:fieled="*{adresse}"/>
+             <small>informe votre adresse s'il vous plait</small>
+            <label><b>Type de travail</b></label>
+            <select class="form-select form-select-sm mb-3 text-uppercase fst-italic" th:errorclass="is-invalid"   aria-label=".form-select-sm example value=" type="text"  name="type" th:fieled="*{type}">
+                <option selected>selectionner le type travail que vous avez Besoin </option>
+                <option style="color: red">URGENT</option>
+                <option>Constrution de fosses</option>
+                <option>Constrution de maison</option>
+                <option>autre Type construction</option>
+                <option>Nettoyager de fosses</option>
+                <option>Nettoyager domestique</option>
+                <option>Nettoyager Cours ou jardins</option>
+                <option>Nettoyager Route</option>
+                <option>Debouchage de tuyaux</option>
+                <option>Debouchage de fosses Septique</option>
+                <option>Debouchage ou construction de caniveaux</option>
+                <option>forage de famille</option>
+                <option>puits perdus</option>
+                <option style="color: green" >Autres travail </option>
+            </select>
+             <small>selectionner le type de travail que vous voulez realiser </small>
+             <label><b>QUAND</b></label>
+             <input class="form-control" type="date" th:errorclass="is-invalid" value="" name="datePrecis" th:fieled="*{datePrecis}"/>
+             <small>informe le jour que vous voulez realiser le travail</small>
+    </div>
+
+    <div>
+        <a href="/index" class=" btn-sm btn-info">Retour</a>
+        <button class="btn-sm btn-success" type="submit">Envoyer</button>
+        <a href="https://www.facebook.com/" class=" btn-sm btn-primary">facebook</a>
+    </div>
+</form>
+
+<h2>
+<div>
+    <div class="card-body text-center">
+        <div class="col-12 ">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcVvo0phMQh47xya_S85FMNnysoZKv46eEQ&usqp=CAU">
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeR2GPsatt15vkDH3kJ6Z_33F6Ruy7Z6gi5g&usqp=CAU">
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="https://assainissement.smtc-btp.fr/wp-content/uploads/2019/06/camion-vidange-fosse-septique.jpg">
+                    <button type="button" class="btn-sm btn-warning"><a href="/vidance" style="color: white">Vidance</a></button>
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqGcDc006ZuSCyOqo2DqghyJLChx_Y3g2sOA&usqp=CAU">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="flex-sm-fill text-sm-center fst-italic">Merci pour votre confiance !!!</p>
+</div>
+</h2>
+
+
+
+<!--Import jQuery before materialize.js-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>

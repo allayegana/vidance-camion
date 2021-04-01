@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+      xml:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ListarContaApplication</title>
+    <link rel="shortcut icon" href="img/vdc.jpeg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/materialize.min.css}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body class="">
+
+<nav>
+    <div class=" navbar-nav">
+        <p class="brand-logo center text-uppercase fst-italic">La liste des Clientes</p>
+<!--        <a href="/vidance" class="btn-sm text-uppercase">Retour au Formulaire</a>-->
+
+    </div>
+</nav>
+
+<table class="">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>PRENOM</th>
+        <th>NOM</th>
+        <th>VILLE</th>
+        <th>QUATIER</th>
+        <th>ADRESSE</th>
+        <th>DATE-PRECIS</th>
+        <th>TEMPS_REEL</th>
+        <th>Q-V</th>
+        <th>PRIX EN FCFA</th>
+        <th>EFFACER</th>
+    </tr>
+    </thead>
+        <tbody th:each="compte : ${comptes}">
+            <td class="text-uppercase"><span th:text="${compte.id}"></span></td>
+            <td class="text-uppercase"><span th:text="${compte.prenom}"></span></td>
+            <td class="text-uppercase"><span th:text="${compte.nom}"></span></td>
+            <td class="text-uppercase"><span th:text="${compte.ville}"></span></td>
+            <td class="text-uppercase"><span th:text="${compte.quartier}"></span></td>
+            <td class="text-uppercase"><span th:text="${compte.adresse}"></span></td>
+            <td style="color:blueviolet"class="text-uppercase"><span th:text="${compte.datePrecis}"></span></td>
+           <td class="text-uppercase" style="color:brown"><span th:text="${compte.hj}"></span></td>
+            <td  class="text-uppercase"><span th:text="${compte.voyage}" style="color:red"></span></td>
+            <td style="color:green" class="text-uppercase"><span th:text="${compte.prix}"  ></span> FCFA</td>
+<!--           <td class="text-uppercase"><span th:text="${compte.nv}"></span></td>&ndash;&gt;-->
+            <td><a class="waves-effect waves-light btn-Small" th:href="${(#mvc.url('CC#deletarConta').arg(0,compte.id)).build()}">
+            <i class="material-icons left">delete</i></a></td>
+        </tbody>
+</table>
+
+<div class="container" th:each="reg : ${registro}" style="color: royalblue"><p class="">TOTAL DE LISTE : <span th:text="${registro}"></span></p>
+</div>
+
+<!--<a href="/index" class="waves-effect waves-light btn-small btn-info"><i class="material-icons left">cloud</i>Retour au page principal</a>-->
+
+
+
+<!--Import jQuery before materialize.js-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
