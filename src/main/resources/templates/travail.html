@@ -15,14 +15,14 @@
 <h1>
     <div>
         <div class="">
-                <div class="card-body text-center">
-                    <img class="img-thumbnail" style="width:30rem" src="https://www.reno-info-maison.com/rim_images/articles/evacuations-nicoll.jpg">
-                </div>
+            <div class="card-body text-center">
+                <img class="img-thumbnail" style="width:30rem" src="https://www.reno-info-maison.com/rim_images/articles/evacuations-nicoll.jpg">
+            </div>
         </div>
-        </div>
-        <p class="flex-sm-fill text-sm-center fst-italic">Remplir le Formulaire Suivante !!!</p>
-</h1>
-<form class="container" method="POST" th:object="${traveaux}">
+    </div>
+      <p class="flex-sm-fill text-sm-center fst-italic">Remplir le Formulaire Suivante !!!</p></h1>
+
+   <form class="container" method="POST" th:object="${traveaux}">
     <th:block th:include="messageValidation"></th:block>
     <div class="row col 12 form-group card-body">
             <label><b>Prenom</b></label>
@@ -64,12 +64,12 @@
              <small>informe le jour que vous voulez realiser le travail</small>
     </div>
 
-    <div>
-        <a href="/index" class=" btn-sm btn-info">Retour</a>
-        <button class="btn-sm btn-success" type="submit">Envoyer</button>
-        <a href="https://www.facebook.com/" class=" btn-sm btn-primary">facebook</a>
-    </div>
-</form>
+        <div>
+            <a href="/index" class=" btn-sm btn-info">Retour</a>
+            <button class="btn-sm btn-success" type="submit">Envoyer</button>
+            <a href="https://www.facebook.com/" class=" btn-sm btn-primary">facebook</a>
+        </div>
+   </form>
 
 <h2>
 <div>

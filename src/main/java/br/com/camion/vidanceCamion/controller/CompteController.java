@@ -190,7 +190,6 @@ public class CompteController {
     @RequestMapping("/listaTravail")
     public  ModelAndView listaTravail(){
         ModelAndView tv = new ModelAndView("/lista");
-
         Sort sort = Sort.by("hj").ascending();
         List<Traveaux> traveaus =  Tr.findAll(sort);
         tv.addObject("traveaus", traveaus);

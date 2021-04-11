@@ -15,12 +15,11 @@
 
 <nav>
     <div class=" navbar-nav">
-        <p class="brand-logo center text-uppercase fst-italic">La liste des Clientes</p>
+        <p class="brand-logo center text-uppercase fst-italic" >La liste des Clientes</p>
 <!--        <a href="/vidance" class="btn-sm text-uppercase">Retour au Formulaire</a>-->
-
     </div>
 </nav>
-
+<p id="demo" style="background:red;color:white"></p>
 <table class="">
     <thead>
     <tr>
@@ -48,8 +47,7 @@
            <td class="text-uppercase" style="color:brown"><span th:text="${compte.hj}"></span></td>
             <td  class="text-uppercase"><span th:text="${compte.voyage}" style="color:red"></span></td>
             <td style="color:green" class="text-uppercase"><span th:text="${compte.prix}"  ></span> FCFA</td>
-<!--           <td class="text-uppercase"><span th:text="${compte.nv}"></span></td>&ndash;&gt;-->
-            <td><a class="waves-effect waves-light btn-Small" th:href="${(#mvc.url('CC#deletarConta').arg(0,compte.id)).build()}">
+            <td><a class="waves-effect waves-light btn-Small" onclick="funcao1()" th:href="${(#mvc.url('CC#deletarConta').arg(0,compte.id)).build()}">
             <i class="material-icons left">delete</i></a></td>
         </tbody>
 </table>
@@ -66,8 +64,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.js"></script>
 <script>
-
+function funcao1()
+{
+var x;
+var r=confirm("tu souhaitez effacer ?");
+if (r==true)
+  {
+ document.getElementById("demo").innerHTML="le client a ete excluir avec suces";
+  }else{
+  return false ;
+  }
+}
 </script>
 </body>
 </html>
