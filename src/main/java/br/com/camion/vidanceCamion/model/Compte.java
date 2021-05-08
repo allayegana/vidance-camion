@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 
 @Entity
@@ -16,7 +17,6 @@ public class Compte implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cp_Sequence")
     @Column(name = "ID")
     private Long id;
-
 
     @NotBlank
     private String prenom;
@@ -41,6 +41,9 @@ public class Compte implements Serializable {
     private double prix ;
 
 
+
+    private String hj = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm"));
+
     public String getHj() {
         return hj;
     }
@@ -49,9 +52,6 @@ public class Compte implements Serializable {
 
         this.hj = hj;
     }
-
-    private String hj = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm"));
-
 
 
     public double getPrix() {
@@ -120,6 +120,7 @@ public class Compte implements Serializable {
 
 
     }
+
 
     public String getDatePrecis() {
         return datePrecis;
